@@ -1,24 +1,29 @@
-// study.js 디폴트 함수
-export default function Study(props) {
+export default function Study() {
 
-  //Rest parameter 함수
-  function squaredSum(...numbers){
-      //제곱근 처리
-      const squaredNumber = numbers.map(number => number * number);
-      console.log(squaredNumber);
+    const name = "Amy";
+    const age = 30;
+    const person = {
+        name, // name: name
+        age,  // age: age
+        address: {
+            city: '서울시',
+            gu: '영등포구'
+        }
+    };
 
-      //모두 덧셈
-      const sum = squaredNumber.reduce((a, b)=> a+b, 0);
-      console.log(sum);
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+    const arr3 = [...arr1, ...arr2];
 
-      return sum;
-  }
+    console.log(arr3);   // [1,2,3,4,5,6]
 
-  const result = squaredSum(1,2,3,4,5);
+    const amy = {...person, nickname: '여우', complete : arr3}
 
-  return (
-      <>
-          <div>제곱근의 총 합은 {result}</div>
-      </>
-  );
+    return (
+        <>
+            <div>{amy?.address?.city}</div>
+            <div>{amy?.nickname}</div>
+            <div>{amy?.complete}</div>
+        </>
+    )
 }
