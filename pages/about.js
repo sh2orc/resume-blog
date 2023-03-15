@@ -17,7 +17,13 @@ export default function About() {
                     </div>
 
                     <div className={"flex space-x-5 ml-5 items-center"}>
-                        <div>Menu1</div>
+                        <div class={join(
+                            "px-3 cursor-pointer",
+                            "hover:text-blue-700 hover:bg-red-100",
+                            "hover:font-semibold hover:rounded"
+                        )}>
+                            Menu1
+                        </div>
                         <div>Menu2</div>
                         <div>Menu3</div>
                     </div>
